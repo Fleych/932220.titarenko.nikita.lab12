@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Manual";
+
+    var operations = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "+", Text = "+" },
+        new SelectListItem { Value = "-", Text = "-" },
+        new SelectListItem { Value = "*", Text = "*" },
+        new SelectListItem { Value = "/", Text = "/" }
+    };
+}
+
+@using (Html.BeginForm("ManualParsingInSingleAction", "Home", FormMethod.Post))
+{
+    <h1 class="display-4"><b>Manual</b></h1>
+
+    <div>@Html.TextBox("a", "", new { Type = "text" })</div>
+    <div>@Html.DropDownList("operation", operations)</div>
+    <div>@Html.TextBox("b", "", new { Type = "text" })</div>
+    <div><input type="submit" value="Submit" /></div>
+}

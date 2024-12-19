@@ -1,0 +1,20 @@
+﻿@model _932220.titarenko.nikita.lab12.Models.CalcModel
+
+@{
+    ViewData["Title"] = "ModelBindingInSeparateModel";
+}
+
+<form asp-action="ModelBindingInSeparateModel" asp-controller="Home">
+    <h1 class="display-4"><b>ModelBindingInSeparateModel</b></h1>
+    <div><input asp-for="a" /></div>
+    <div>
+        <select asp-for="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </div>
+    <div><input asp-for="b" /></div>
+    <div><input type="submit" value="Submit" /></div>
+</form>
